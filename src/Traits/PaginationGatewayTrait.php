@@ -1,11 +1,11 @@
-<?php namespace Acoustep\EntrustGui\Traits;
+<?php namespace Jmkim\EntrustGui\Traits;
 
 /**
  * This file is part of Entrust GUI,
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 trait PaginationGatewayTrait
 {

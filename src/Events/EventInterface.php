@@ -1,4 +1,4 @@
-<?php namespace Acoustep\EntrustGui\Events;
+<?php namespace Jmkim\EntrustGui\Events;
 
 interface EventInterface
 {

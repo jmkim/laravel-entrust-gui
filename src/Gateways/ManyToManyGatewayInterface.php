@@ -1,4 +1,4 @@
-<?php namespace Acoustep\EntrustGui\Gateways;
+<?php namespace Jmkim\EntrustGui\Gateways;
 
 interface ManyToManyGatewayInterface
 {

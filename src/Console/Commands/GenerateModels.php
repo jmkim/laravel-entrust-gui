@@ -1,4 +1,4 @@
-<?php namespace Acoustep\EntrustGui\Console\Commands;
+<?php namespace Jmkim\EntrustGui\Console\Commands;
 
 use Illuminate\Console\Command;
 

@@ -1,11 +1,11 @@
 <?php
 namespace Console\Commands;
 
-use Acoustep\EntrustGui\Console\Commands\GenerateModels;
+use Jmkim\EntrustGui\Console\Commands\GenerateModels;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use \Mockery as m;
-use Acoustep\EntrustGui\Tests\TestCase;
+use Jmkim\EntrustGui\Tests\TestCase;
 use org\bovigo\vfs\vfsStream;
 
 class GenerateModelsTest extends TestCase

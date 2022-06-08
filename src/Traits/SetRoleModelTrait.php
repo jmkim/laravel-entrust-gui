@@ -1,4 +1,4 @@
-<?php namespace Acoustep\EntrustGui\Traits;
+<?php namespace Jmkim\EntrustGui\Traits;
 
 trait SetRoleModelTrait
 {

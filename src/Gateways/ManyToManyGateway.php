@@ -1,9 +1,9 @@
-<?php namespace Acoustep\EntrustGui\Gateways;
+<?php namespace Jmkim\EntrustGui\Gateways;
 
 use Prettus\Repository\Eloquent\BaseRepository;
-use Acoustep\EntrustGui\Traits\PaginationGatewayTrait;
-use Acoustep\EntrustGui\Traits\DeleteModelTrait;
-use Acoustep\EntrustGui\Traits\FindModelTrait;
+use Jmkim\EntrustGui\Traits\PaginationGatewayTrait;
+use Jmkim\EntrustGui\Traits\DeleteModelTrait;
+use Jmkim\EntrustGui\Traits\FindModelTrait;
 use Illuminate\Config\Repository as Config;
 use Illuminate\Events\Dispatcher;
 
@@ -12,7 +12,7 @@ use Illuminate\Events\Dispatcher;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 abstract class ManyToManyGateway
 {
@@ -50,7 +50,7 @@ abstract class ManyToManyGateway
     {
         $model = $this->repository->create($request->all());
         $model->{$this->getShortRelationName()}()->sync($request->get($this->getRelationName(), []));
-        $event_class = "Acoustep\EntrustGui\Events\\".ucwords($this->getModelName()).'CreatedEvent';
+        $event_class = "Jmkim\EntrustGui\Events\\".ucwords($this->getModelName()).'CreatedEvent';
         $event = new $event_class;
         $this->dispatcher->dispatch($event->setModel($model));
         return $model;
@@ -79,7 +79,7 @@ abstract class ManyToManyGateway
     public function update($request, $id)
     {
         $model = $this->repository->update($request->all(), $id);
-        $event_class = "Acoustep\EntrustGui\Events\\".ucwords($this->getModelName()).'UpdatedEvent';
+        $event_class = "Jmkim\EntrustGui\Events\\".ucwords($this->getModelName()).'UpdatedEvent';
         $event = new $event_class;
         $this->dispatcher->dispatch($event->setModel($model));
         return $model;

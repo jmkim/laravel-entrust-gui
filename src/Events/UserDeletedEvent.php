@@ -1,6 +1,6 @@
-<?php namespace Acoustep\EntrustGui\Events;
+<?php namespace Jmkim\EntrustGui\Events;
 
-use Acoustep\EntrustGui\Traits\SetUserModelTrait;
+use Jmkim\EntrustGui\Traits\SetUserModelTrait;
 use App\Events\Event;
 use Illuminate\Queue\SerializesModels;
 
@@ -9,7 +9,7 @@ use Illuminate\Queue\SerializesModels;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 class UserDeletedEvent implements EventInterface
 {

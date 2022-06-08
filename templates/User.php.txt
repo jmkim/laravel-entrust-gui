@@ -6,7 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Shanmuga\Entrust\Traits\LaravelEntrustUserTrait;
-use Acoustep\EntrustGui\Contracts\HashMethodInterface;
+use Jmkim\EntrustGui\Contracts\HashMethodInterface;
 use Hash;
 
 class User extends Authenticatable implements CanResetPasswordContract, ValidatingModelInterface, HashMethodInterface

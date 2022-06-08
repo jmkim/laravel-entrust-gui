@@ -1,7 +1,7 @@
 <?php namespace Gateways;
 
-use Acoustep\EntrustGui\Gateways\PermissionGateway;
-use Acoustep\EntrustGui\Gateways\PermissionRepository;
+use Jmkim\EntrustGui\Gateways\PermissionGateway;
+use Jmkim\EntrustGui\Gateways\PermissionRepository;
 use \Mockery as m;
 
 class PermissionGatewayTest extends \Codeception\TestCase\Test
@@ -18,7 +18,7 @@ class PermissionGatewayTest extends \Codeception\TestCase\Test
     protected function _before()
     {
         $this->config = m::mock('Illuminate\Config\Repository');
-        $this->repository = m::mock('Acoustep\EntrustGui\Repositories\PermissionRepository, Prettus\Repository\Eloquent\BaseRepository');
+        $this->repository = m::mock('Jmkim\EntrustGui\Repositories\PermissionRepository, Prettus\Repository\Eloquent\BaseRepository');
         $this->dispatcher = m::mock('Illuminate\Events\Dispatcher');
         $this->dispatcher->shouldReceive('dispatch');
     }
@@ -54,7 +54,7 @@ class PermissionGatewayTest extends \Codeception\TestCase\Test
             ->once();
         $this->dispatcher->shouldReceive('handle')
               ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\PermissionCreatedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\PermissionCreatedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new PermissionGateway($this->config, $this->repository, $this->dispatcher);
@@ -90,7 +90,7 @@ class PermissionGatewayTest extends \Codeception\TestCase\Test
 
         $this->dispatcher->shouldReceive('handle')
               ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\PermissionUpdatedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\PermissionUpdatedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new PermissionGateway($this->config, $this->repository, $this->dispatcher);
@@ -110,7 +110,7 @@ class PermissionGatewayTest extends \Codeception\TestCase\Test
 
         $this->dispatcher->shouldReceive('handle')
               ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\PermissionDeletedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\PermissionDeletedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new PermissionGateway($this->config, $this->repository, $this->dispatcher);

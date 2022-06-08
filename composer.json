@@ -1,13 +1,13 @@
 {
-    "name": "acoustep/entrust-gui",
-    "description": "A GUI for the Entrust package.",
+    "name": "jmkim/laravel-entrust-gui",
+    "description": "GUI for Shanmuga's LaravelEntrust for Laravel 5+ (5, 6, 7, 8 and 9)",
     "keywords": ["laravel","illuminate","auth","roles","acl","permission","gui"],
-    "homepage": "https://github.com/acoustep/entrust-gui",
+    "homepage": "https://github.com/jmkim/laravel-entrust-gui",
     "license": "MIT",
     "authors": [
         {
-            "name": "Mitch Stanley",
-            "email": "acoustep+entrustgui@fastmail.co.uk"
+            "name": "Jongmin Kim",
+            "email": "jmkim@pukyong.ac.kr"
         }
     ],
     "require": {
@@ -28,12 +28,12 @@
     },
     "autoload": {
       "psr-4": {
-          "Acoustep\\EntrustGui\\": "src/"
+          "Jmkim\\EntrustGui\\": "src/"
       }
     },
     "autoload-dev": {
         "psr-4": {
-            "Acoustep\\EntrustGui\\Tests\\": "tests/"
+            "Jmkim\\EntrustGui\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",

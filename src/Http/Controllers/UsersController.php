@@ -1,7 +1,7 @@
-<?php namespace Acoustep\EntrustGui\Http\Controllers;
+<?php namespace Jmkim\EntrustGui\Http\Controllers;
 
 use Illuminate\Routing\Controller as Controller;
-use Acoustep\EntrustGui\Gateways\UserGateway;
+use Jmkim\EntrustGui\Gateways\UserGateway;
 use Illuminate\Http\Request;
 use Watson\Validating\ValidationException;
 use Illuminate\Config\Repository as Config;
@@ -11,7 +11,7 @@ use Illuminate\Config\Repository as Config;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 class UsersController extends Controller
 {

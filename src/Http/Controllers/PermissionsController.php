@@ -1,6 +1,6 @@
-<?php namespace Acoustep\EntrustGui\Http\Controllers;
+<?php namespace Jmkim\EntrustGui\Http\Controllers;
 
-use Acoustep\EntrustGui\Gateways\PermissionGateway;
+use Jmkim\EntrustGui\Gateways\PermissionGateway;
 use Illuminate\Config\Repository as Config;
 use Illuminate\Http\Request;
 
@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 class PermissionsController extends ManyToManyController
 {

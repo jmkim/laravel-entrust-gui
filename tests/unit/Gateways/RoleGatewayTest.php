@@ -1,7 +1,7 @@
 <?php namespace Gateways;
 
-use Acoustep\EntrustGui\Gateways\RoleGateway;
-use Acoustep\EntrustGui\Gateways\RoleRepository;
+use Jmkim\EntrustGui\Gateways\RoleGateway;
+use Jmkim\EntrustGui\Gateways\RoleRepository;
 use \Mockery as m;
 
 class RoleGatewayTest extends \Codeception\TestCase\Test
@@ -18,7 +18,7 @@ class RoleGatewayTest extends \Codeception\TestCase\Test
     protected function _before()
     {
         $this->config = m::mock('Illuminate\Config\Repository');
-        $this->repository = m::mock('Acoustep\EntrustGui\Repositories\RoleRepository, Prettus\Repository\Eloquent\BaseRepository');
+        $this->repository = m::mock('Jmkim\EntrustGui\Repositories\RoleRepository, Prettus\Repository\Eloquent\BaseRepository');
         $this->dispatcher = m::mock('Illuminate\Events\Dispatcher');
         $this->dispatcher->shouldReceive('dispatch');
     }
@@ -56,7 +56,7 @@ class RoleGatewayTest extends \Codeception\TestCase\Test
               ->with(m::any());
         // $this->event_created_class->shouldReceive('setModel')
         //       ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\RoleCreatedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\RoleCreatedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new RoleGateway($this->config, $this->repository, $this->dispatcher);
@@ -92,7 +92,7 @@ class RoleGatewayTest extends \Codeception\TestCase\Test
 
         $this->dispatcher->shouldReceive('handle')
               ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\RoleUpdatedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\RoleUpdatedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new RoleGateway($this->config, $this->repository, $this->dispatcher);
@@ -112,7 +112,7 @@ class RoleGatewayTest extends \Codeception\TestCase\Test
 
         $this->dispatcher->shouldReceive('handle')
               ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\RoleDeletedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\RoleDeletedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new RoleGateway($this->config, $this->repository, $this->dispatcher);

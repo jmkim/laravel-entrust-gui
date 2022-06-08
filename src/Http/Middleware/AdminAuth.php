@@ -1,4 +1,4 @@
-<?php namespace Acoustep\EntrustGui\Http\Middleware;
+<?php namespace Jmkim\EntrustGui\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -13,7 +13,7 @@ use Illuminate\Routing\Redirector;
  * From http://stackoverflow.com/a/29186175
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 class AdminAuth
 {

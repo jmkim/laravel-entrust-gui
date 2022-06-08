@@ -1,7 +1,7 @@
 <?php
 namespace Http\Middleware;
 
-use Acoustep\EntrustGui\Http\Middleware\AdminAuth;
+use Jmkim\EntrustGui\Http\Middleware\AdminAuth;
 use \Mockery as m;
 
 class AdminAuthTest extends \Codeception\TestCase\Test

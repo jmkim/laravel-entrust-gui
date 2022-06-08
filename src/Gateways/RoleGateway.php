@@ -1,8 +1,8 @@
-<?php namespace Acoustep\EntrustGui\Gateways;
+<?php namespace Jmkim\EntrustGui\Gateways;
 
-use Acoustep\EntrustGui\Repositories\RoleRepository;
-use Acoustep\EntrustGui\Traits\GetRoleModelNameTrait;
-use Acoustep\EntrustGui\Traits\GetRoleRelationNameTrait;
+use Jmkim\EntrustGui\Repositories\RoleRepository;
+use Jmkim\EntrustGui\Traits\GetRoleModelNameTrait;
+use Jmkim\EntrustGui\Traits\GetRoleRelationNameTrait;
 use Illuminate\Config\Repository as Config;
 use Illuminate\Events\Dispatcher;
 
@@ -11,7 +11,7 @@ use Illuminate\Events\Dispatcher;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 class RoleGateway extends ManyToManyGateway implements ManyToManyGatewayInterface
 {

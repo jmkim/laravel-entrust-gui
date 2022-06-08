@@ -1,6 +1,6 @@
-<?php namespace Acoustep\EntrustGui;
+<?php namespace Jmkim\EntrustGui;
 
-use Acoustep\EntrustGui\Console\Commands\GenerateModels;
+use Jmkim\EntrustGui\Console\Commands\GenerateModels;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Config;
@@ -9,6 +9,7 @@ use Config;
  * EntrustGuiServiceProvider
  *
  * @author Mitch Stanley <acoustep+entrustgui@fastmail.co.uk>
+ * @author Jongmin Kim <jmkim@pukyong.ac.kr>
  */
 class EntrustGuiServiceProvider extends ServiceProvider
 {
@@ -65,7 +66,7 @@ class EntrustGuiServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         $router->group(
-            ['namespace' => 'Acoustep\EntrustGui\Http\Controllers'],
+            ['namespace' => 'Jmkim\EntrustGui\Http\Controllers'],
             function ($router) {
                   include __DIR__.'/Http/routes.php';
             }
@@ -82,16 +83,16 @@ class EntrustGuiServiceProvider extends ServiceProvider
         $this->app->register('Shanmuga\LaravelEntrust\LaravelEntrustServiceProvider');
         $this->app->register('Prettus\Repository\Providers\RepositoryServiceProvider');
         $this->app->bind(
-            'Acoustep\EntrustGui\Repositories\UserRepository',
-            'Acoustep\EntrustGui\Repositories\UserRepositoryEloquent'
+            'Jmkim\EntrustGui\Repositories\UserRepository',
+            'Jmkim\EntrustGui\Repositories\UserRepositoryEloquent'
         );
         $this->app->bind(
-            'Acoustep\EntrustGui\Repositories\RoleRepository',
-            'Acoustep\EntrustGui\Repositories\RoleRepositoryEloquent'
+            'Jmkim\EntrustGui\Repositories\RoleRepository',
+            'Jmkim\EntrustGui\Repositories\RoleRepositoryEloquent'
         );
         $this->app->bind(
-            'Acoustep\EntrustGui\Repositories\PermissionRepository',
-            'Acoustep\EntrustGui\Repositories\PermissionRepositoryEloquent'
+            'Jmkim\EntrustGui\Repositories\PermissionRepository',
+            'Jmkim\EntrustGui\Repositories\PermissionRepositoryEloquent'
         );
 
         $this->registerCommands();

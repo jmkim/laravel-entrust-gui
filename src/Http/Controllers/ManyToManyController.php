@@ -1,7 +1,7 @@
-<?php namespace Acoustep\EntrustGui\Http\Controllers;
+<?php namespace Jmkim\EntrustGui\Http\Controllers;
 
 use Illuminate\Routing\Controller as Controller;
-use Acoustep\EntrustGui\Gateways\RoleGateway;
+use Jmkim\EntrustGui\Gateways\RoleGateway;
 use Illuminate\Http\Request;
 use Watson\Validating\ValidationException;
 use Illuminate\Config\Repository as Config;
@@ -11,7 +11,7 @@ use Illuminate\Config\Repository as Config;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 abstract class ManyToManyController extends Controller
 {

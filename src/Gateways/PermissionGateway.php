@@ -1,8 +1,8 @@
-<?php namespace Acoustep\EntrustGui\Gateways;
+<?php namespace Jmkim\EntrustGui\Gateways;
 
-use Acoustep\EntrustGui\Repositories\PermissionRepository;
-use Acoustep\EntrustGui\Traits\GetPermissionModelNameTrait;
-use Acoustep\EntrustGui\Traits\GetPermissionUserRelationNameTrait;
+use Jmkim\EntrustGui\Repositories\PermissionRepository;
+use Jmkim\EntrustGui\Traits\GetPermissionModelNameTrait;
+use Jmkim\EntrustGui\Traits\GetPermissionUserRelationNameTrait;
 use Illuminate\Config\Repository as Config;
 use Illuminate\Events\Dispatcher;
 
@@ -11,7 +11,7 @@ use Illuminate\Events\Dispatcher;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 class PermissionGateway extends ManyToManyGateway implements ManyToManyGatewayInterface
 {

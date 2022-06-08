@@ -1,13 +1,13 @@
-<?php namespace Acoustep\EntrustGui\Gateways;
+<?php namespace Jmkim\EntrustGui\Gateways;
 
-use Acoustep\EntrustGui\Repositories\UserRepository;
-use Acoustep\EntrustGui\Events\UserCreatedEvent;
-use Acoustep\EntrustGui\Events\UserUpdatedEvent;
-use Acoustep\EntrustGui\Events\UserDeletedEvent;
-use Acoustep\EntrustGui\Traits\DeleteModelTrait;
-use Acoustep\EntrustGui\Traits\FindModelTrait;
-use Acoustep\EntrustGui\Traits\GetPermissionUserRelationNameTrait;
-use Acoustep\EntrustGui\Traits\PaginationGatewayTrait;
+use Jmkim\EntrustGui\Repositories\UserRepository;
+use Jmkim\EntrustGui\Events\UserCreatedEvent;
+use Jmkim\EntrustGui\Events\UserUpdatedEvent;
+use Jmkim\EntrustGui\Events\UserDeletedEvent;
+use Jmkim\EntrustGui\Traits\DeleteModelTrait;
+use Jmkim\EntrustGui\Traits\FindModelTrait;
+use Jmkim\EntrustGui\Traits\GetPermissionUserRelationNameTrait;
+use Jmkim\EntrustGui\Traits\PaginationGatewayTrait;
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Config\Repository as Config;
 use Illuminate\Events\Dispatcher;
@@ -17,7 +17,7 @@ use Illuminate\Events\Dispatcher;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 class UserGateway implements ManyToManyGatewayInterface
 {
@@ -62,7 +62,7 @@ class UserGateway implements ManyToManyGatewayInterface
         $data = $request->all();
         $user = $this->repository->create($data);
 
-        $event_class = "Acoustep\EntrustGui\Events\\".ucwords($this->getModelName()).'CreatedEvent';
+        $event_class = "Jmkim\EntrustGui\Events\\".ucwords($this->getModelName()).'CreatedEvent';
         $event = new $event_class;
         $this->dispatcher->dispatch($event->setModel($user));
         return $user;
@@ -84,7 +84,7 @@ class UserGateway implements ManyToManyGatewayInterface
             $data['password_confirmation'] = $request->get('password_confirmation');
         }
         $user = $this->repository->update($data, $id);
-        $event_class = "Acoustep\EntrustGui\Events\\".ucwords($this->getModelName()).'UpdatedEvent';
+        $event_class = "Jmkim\EntrustGui\Events\\".ucwords($this->getModelName()).'UpdatedEvent';
         $event = new $event_class;
         $this->dispatcher->dispatch($event->setModel($user));
         return $user;

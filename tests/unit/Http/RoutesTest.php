@@ -1,7 +1,7 @@
-<?php namespace Acoustep\EntrustGui\Tests\Unit\Http;
+<?php namespace Jmkim\EntrustGui\Tests\Unit\Http;
 
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-use Acoustep\EntrustGui\Tests\TestCase;
+use Jmkim\EntrustGui\Tests\TestCase;
 
 /**
  * Class     RoutesTest

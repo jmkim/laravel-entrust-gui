@@ -1,7 +1,7 @@
 <?php namespace Gateways;
 
-use Acoustep\EntrustGui\Gateways\UserGateway;
-use Acoustep\EntrustGui\Gateways\UserRepository;
+use Jmkim\EntrustGui\Gateways\UserGateway;
+use Jmkim\EntrustGui\Gateways\UserRepository;
 use \Mockery as m;
 
 
@@ -25,7 +25,7 @@ class UserGatewayTest extends \Codeception\TestCase\Test
     {
         $this->config = m::mock('Illuminate\Config\Repository');
         $this->config->shouldReceive('get')->andReturn('\Gateways\RoleDummy');
-        $this->repository = m::mock('Acoustep\EntrustGui\Repositories\UserRepository, Prettus\Repository\Eloquent\BaseRepository');
+        $this->repository = m::mock('Jmkim\EntrustGui\Repositories\UserRepository, Prettus\Repository\Eloquent\BaseRepository');
         $this->dispatcher = m::mock('Illuminate\Events\Dispatcher');
         $this->dispatcher->shouldReceive('dispatch');
         $this->hash = m::mock('Illuminate\Contracts\Hashing\Hasher');
@@ -65,7 +65,7 @@ class UserGatewayTest extends \Codeception\TestCase\Test
 
         $this->dispatcher->shouldReceive('handle')
               ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\UserCreatedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\UserCreatedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new UserGateway($this->config, $this->repository, $this->dispatcher, $this->hash);
@@ -100,7 +100,7 @@ class UserGatewayTest extends \Codeception\TestCase\Test
 
         $this->dispatcher->shouldReceive('handle')
               ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\UserUpdatedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\UserUpdatedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new UserGateway($this->config, $this->repository, $this->dispatcher, $this->hash);
@@ -124,7 +124,7 @@ class UserGatewayTest extends \Codeception\TestCase\Test
 
         $this->dispatcher->shouldReceive('handle')
               ->with(m::any());
-        $event = m::mock("overload:Acoustep\EntrustGui\Events\UserDeletedEvent");
+        $event = m::mock("overload:Jmkim\EntrustGui\Events\UserDeletedEvent");
         $event->shouldReceive('setModel');
 
         $tester = new UserGateway($this->config, $this->repository, $this->dispatcher, $this->hash);

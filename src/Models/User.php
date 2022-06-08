@@ -1,4 +1,4 @@
-<?php namespace Acoustep\EntrustGui\Models;
+<?php namespace Jmkim\EntrustGui\Models;
 
 use Esensi\Model\Contracts\HashingModelInterface;
 use Esensi\Model\Contracts\ValidatingModelInterface;

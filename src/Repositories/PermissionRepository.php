@@ -1,6 +1,6 @@
 <?php
 
-namespace Acoustep\EntrustGui\Repositories;
+namespace Jmkim\EntrustGui\Repositories;
 
 use Prettus\Repository\Contracts\RepositoryInterface;
 
@@ -9,7 +9,7 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 interface PermissionRepository extends RepositoryInterface
 {

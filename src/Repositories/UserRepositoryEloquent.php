@@ -1,4 +1,4 @@
-<?php namespace Acoustep\EntrustGui\Repositories;
+<?php namespace Jmkim\EntrustGui\Repositories;
 
 use Illuminate\Container\Container as Application;
 use Prettus\Repository\Eloquent\BaseRepository;
@@ -13,7 +13,7 @@ use Exception;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 class UserRepositoryEloquent extends BaseRepository implements UserRepository
 {
@@ -56,11 +56,11 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
         $model = parent::create($attributes);
         if ( ! $this->passwordHashIsImplemented($model)) {
             throw new Exception(
-                "User model must implement either Acoustep\Contracts\HashMethodInterface or Esensi\Model\Contracts\HashingModelInterface.
+                "User model must implement either Jmkim\Contracts\HashMethodInterface or Esensi\Model\Contracts\HashingModelInterface.
                 Revert to 0.3.* or see upgrade guide for details."
             );
         }
-        if(in_array('Acoustep\EntrustGui\Contracts\HashMethodInterface', class_implements($model))) {
+        if(in_array('Jmkim\EntrustGui\Contracts\HashMethodInterface', class_implements($model))) {
             $model->entrustPasswordHash();
         }
         $model->roles()->sync($attributes['roles']);
@@ -82,7 +82,7 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
         $model = $this->find($id);
         if ( ! $this->passwordHashIsImplemented($model)) {
             throw new Exception(
-                "User model must implement either Acoustep\EntrustGui\Contracts\HashMethodInterface or Esensi\Model\Contracts\HashingModelInterface.
+                "User model must implement either Jmkim\EntrustGui\Contracts\HashMethodInterface or Esensi\Model\Contracts\HashingModelInterface.
                 Revert to 0.3.* or see upgrade guide for details."
             );
         }
@@ -98,7 +98,7 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
             }
         } else {
             $model = parent::update($attributes, $id);
-            if(in_array('Acoustep\EntrustGui\Contracts\HashMethodInterface', class_implements($model))) {
+            if(in_array('Jmkim\EntrustGui\Contracts\HashMethodInterface', class_implements($model))) {
                 $model->entrustPasswordHash();
             }
 
@@ -108,6 +108,6 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
     }
 
     public function passwordHashIsImplemented($model) {
-        return (in_array('Acoustep\EntrustGui\Contracts\HashMethodInterface', class_implements($model)) || in_array('Esensi\Model\Contracts\HashingModelInterface', class_implements($model)));
+        return (in_array('Jmkim\EntrustGui\Contracts\HashMethodInterface', class_implements($model)) || in_array('Esensi\Model\Contracts\HashingModelInterface', class_implements($model)));
     }
 }

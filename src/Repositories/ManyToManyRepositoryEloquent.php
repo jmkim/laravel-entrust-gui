@@ -1,6 +1,6 @@
 <?php
 
-namespace Acoustep\EntrustGui\Repositories;
+namespace Jmkim\EntrustGui\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -11,7 +11,7 @@ use Config;
  * A Laravel 5 GUI for Entrust.
  *
  * @license MIT
- * @package Acoustep\EntrustGui
+ * @package Jmkim\EntrustGui
  */
 abstract class ManyToManyRepositoryEloquent extends BaseRepository implements RoleRepository
 {
