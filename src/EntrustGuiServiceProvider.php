@@ -79,7 +79,7 @@ class EntrustGuiServiceProvider extends ServiceProvider
     */
     public function register()
     {
-        $this->app->register('Zizaco\Entrust\EntrustServiceProvider');
+        $this->app->register('Shanmuga\LaravelEntrust\LaravelEntrustServiceProvider');
         $this->app->register('Prettus\Repository\Providers\RepositoryServiceProvider');
         $this->app->bind(
             'Acoustep\EntrustGui\Repositories\UserRepository',

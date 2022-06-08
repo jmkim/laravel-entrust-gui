@@ -2,7 +2,7 @@
 
 use Esensi\Model\Contracts\ValidatingModelInterface;
 use Esensi\Model\Traits\ValidatingModelTrait;
-use Zizaco\Entrust\EntrustPermission;
+use Shanmuga\Entrust\EntrustPermission;
 
 class Permission extends EntrustPermission implements ValidatingModelInterface
 {

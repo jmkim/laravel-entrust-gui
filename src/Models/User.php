@@ -7,11 +7,11 @@ use Esensi\Model\Traits\ValidatingModelTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Shanmuga\LaravelEntrust\Traits\LaravelEntrustUserTrait;
 
 class User extends Authenticatable implements CanResetPasswordContract, ValidatingModelInterface, HashingModelInterface
 {
-    use CanResetPassword, ValidatingModelTrait, EntrustUserTrait, HashingModelTrait;
+    use CanResetPassword, ValidatingModelTrait, LaravelEntrustUserTrait, HashingModelTrait;
 
     protected $throwValidationExceptions = true;
 

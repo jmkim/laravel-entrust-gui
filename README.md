@@ -8,7 +8,7 @@
 [![License](https://poser.pugx.org/acoustep/entrust-gui/license)](https://packagist.org/packages/acoustep/entrust-gui)
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P311GU6)
 
-Entrust GUI is a Admin Interface that makes the administration of users, roles and permissions easier for the [Entrust](https://github.com/Zizaco/entrust) package.
+Entrust GUI is a Admin Interface that makes the administration of users, roles and permissions easier for the [Entrust](https://github.com/shanmuga3/laravel-entrust) package.
 
 This package is currently not for handling authentication, authorisation or registration of users. 
 
@@ -20,7 +20,7 @@ Add the package to your ```composer.json``` file
 
 ```
 "acoustep/entrust-gui": "5.8.x-dev",
-"zizaco/entrust": "5.2.x-dev",
+"shanmuga/laravel-entrust": "3.x-dev",
 "watson/validating": "3.2.0 as 2.0.1"
 ```
 
@@ -33,7 +33,7 @@ Acoustep\EntrustGui\EntrustGuiServiceProvider::class,
 Add the Entrust Alias to your ```config/app.php``` file as well.
 
 ```
-'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+'Entrust'   => Shanmuga\LaravelEntrust\LaravelEntrustFacade::class,
 ```
 
 Publish the configuration file(s)
@@ -85,10 +85,10 @@ public function boot() {
 If you then see this error
 
 ```
-ReflectionException  : Method Zizaco\Entrust\MigrationCommand::handle() does not exist
+ReflectionException  : Method Shanmuga\LaravelEntrust\MakeMigrationCommand::handle() does not exist
 ```
 
-This is an issue with `Entrust`, there is a temporary fix by going to `vendor-> zizaco-> entrust-> src-> commands-> MigrationCommand.php` and changing `fire()` to `handle()` and re-running thie migration. [See here for more details](https://github.com/Zizaco/entrust/issues/836). Once this is done, rerun the migration commands.
+This is an issue with `Entrust`, there is a temporary fix by going to `vendor-> shanmuga-> laravel-entrust-> src-> commands-> MakeMigrationCommand.php` and changing `fire()` to `handle()` and re-running thie migration. [See here for more details](https://github.com/Zizaco/entrust/issues/836). Once this is done, rerun the migration commands.
 
 Finally, if you have this error
 
@@ -340,7 +340,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Shanmuga\LaravelEntrust\Traits\LaravelEntrustUserTrait;
 use Acoustep\EntrustGui\Contracts\HashMethodInterface;
 use Hash;
 
@@ -441,7 +441,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Shanmuga\LaravelEntrust\Traits\LaravelEntrustUserTrait;
 use Acoustep\EntrustGui\Contracts\HashMethodInterface;
 use Hash;
 
@@ -503,7 +503,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 use Esensi\Model\Contracts\ValidatingModelInterface;
 use Esensi\Model\Traits\ValidatingModelTrait;
-use Zizaco\Entrust\EntrustRole;
+use Shanmuga\LaravelEntrust\LaravelEntrustRole;
 
 class Role extends EntrustRole implements ValidatingModelInterface
 {
@@ -531,7 +531,7 @@ class Role extends EntrustRole implements ValidatingModelInterface
 
 use Esensi\Model\Contracts\ValidatingModelInterface;
 use Esensi\Model\Traits\ValidatingModelTrait;
-use Zizaco\Entrust\EntrustPermission;
+use Shanmuga\LaravelEntrust\LaravelEntrustPermission;
 
 class Permission extends EntrustPermission implements ValidatingModelInterface
 {
