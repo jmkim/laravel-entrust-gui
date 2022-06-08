@@ -1,25 +1,38 @@
 # Entrust GUI
 
-[![Code Climate](https://codeclimate.com/github/acoustep/entrust-gui/badges/gpa.svg)](https://codeclimate.com/github/acoustep/entrust-gui)
-[![Build Status](https://travis-ci.org/acoustep/entrust-gui.svg?branch=testing)](https://travis-ci.org/acoustep/entrust-gui)
-[![Latest Stable Version](https://poser.pugx.org/acoustep/entrust-gui/v/stable)](https://packagist.org/packages/acoustep/entrust-gui)
-[![Total Downloads](https://poser.pugx.org/acoustep/entrust-gui/downloads)](https://packagist.org/packages/acoustep/entrust-gui)
-[![Latest Unstable Version](https://poser.pugx.org/acoustep/entrust-gui/v/unstable)](https://packagist.org/packages/acoustep/entrust-gui)
-[![License](https://poser.pugx.org/acoustep/entrust-gui/license)](https://packagist.org/packages/acoustep/entrust-gui)
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P311GU6)
+[![Code Climate](https://codeclimate.com/github/jmkim/laravel-entrust-gui/badges/gpa.svg)](https://codeclimate.com/github/jmkim/laravel-entrust-gui)
+[![Build Status](https://travis-ci.org/jmkim/laravel-entrust-gui.svg?branch=testing)](https://travis-ci.org/jmkim/laravel-entrust-gui)
+[![Latest Stable Version](https://poser.pugx.org/jmkim/laravel-entrust-gui/v/stable)](https://packagist.org/packages/jmkim/laravel-entrust-gui)
+[![Total Downloads](https://poser.pugx.org/jmkim/laravel-entrust-gui/downloads)](https://packagist.org/packages/jmkim/laravel-entrust-gui)
+[![Latest Unstable Version](https://poser.pugx.org/jmkim/laravel-entrust-gui/v/unstable)](https://packagist.org/packages/jmkim/laravel-entrust-gui)
+[![License](https://poser.pugx.org/jmkim/laravel-entrust-gui/license)](https://packagist.org/packages/jmkim/laravel-entrust-gui)
 
-Entrust GUI is a Admin Interface that makes the administration of users, roles and permissions easier for the [Entrust](https://github.com/shanmuga3/laravel-entrust) package.
+Entrust GUI is a Admin Interface that makes the administration of users, roles and permissions easier for [Shanmuga's Laravel Entrust](https://github.com/shanmuga3/laravel-entrust) package.
 
 This package is currently not for handling authentication, authorisation or registration of users. 
 
 ![User Panel Preview](http://i.imgur.com/9RJ3qOi.png)
+
+## Disclaimer
+
+Entrust GUI was fully written by Mitch Stanley ([@acoustep](https://github.com/acoustep)). The original codebase is placed at [https://github.com/acoustep/entrust-gui](https://github.com/acoustep/entrust-gui).
+
+This package is a port for [Shanmuga's Laravel Entrust](https://github.com/shanmuga3/laravel-entrust).
+
+* **(Laravel 5, original but unmaintained)** [acoustep's Entrust GUI](https://github.com/acoustep/entrust-gui) for [Zizaco's ENTRUST](https://github.com/Zizaco/entrust)
+* **(Laravel 5 ~ 9, ported and maintained)** [jmkim's Laravel Entrust GUI (this package)](https://github.com/jmkim/laravel-entrust-gui) for [Shanmuga's Laravel Entrust](https://github.com/shanmuga3/laravel-entrust)
+
+You can easily migrate from acoustep's to this package by replacing:
+
+* `Acoustep` to `Jmkim`
+* `acoustep` to `jmkim`
 
 ## Installation
 
 Add the package to your ```composer.json``` file
 
 ```
-"acoustep/entrust-gui": "5.8.x-dev",
+"jmkim/laravel-entrust-gui": "6.x-dev",
 "shanmuga/laravel-entrust": "3.x-dev",
 "watson/validating": "3.2.0 as 2.0.1"
 ```
@@ -27,7 +40,7 @@ Add the package to your ```composer.json``` file
 Add the service provider to your ```config/app.php``` file
 
 ```
-Acoustep\EntrustGui\EntrustGuiServiceProvider::class,
+Jmkim\EntrustGui\EntrustGuiServiceProvider::class,
 ```
 
 Add the Entrust Alias to your ```config/app.php``` file as well.
@@ -131,7 +144,7 @@ Add the Entrust GUI middleware to ```app\Http\Kernal.php```. This middleware wil
 ```
 protected $routeMiddleware = [
   // ...
-  'entrust-gui.admin' => \Acoustep\EntrustGui\Http\Middleware\AdminAuth::class,
+  'entrust-gui.admin' => \Jmkim\EntrustGui\Http\Middleware\AdminAuth::class,
 ];
 
 ```
@@ -252,7 +265,7 @@ The following event classes are available:
 
 namespace App\Listeners;
 
-use Acoustep\EntrustGui\Events\UserCreatedEvent;
+use Jmkim\EntrustGui\Events\UserCreatedEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Log;
@@ -286,31 +299,31 @@ Add the listeners you need to use to ```app/Providers/EventServiceProvider.php``
 
 ```
 protected $listen = [
-  'Acoustep\EntrustGui\Events\UserCreatedEvent' => [
+  'Jmkim\EntrustGui\Events\UserCreatedEvent' => [
     'App\Listeners\UserCreatedListener',
   ],
-  'Acoustep\EntrustGui\Events\UserUpdatedEvent' => [
+  'Jmkim\EntrustGui\Events\UserUpdatedEvent' => [
     'App\Listeners\UserUpdatedListener',
   ],
-  'Acoustep\EntrustGui\Events\UserDeletedEvent' => [
+  'Jmkim\EntrustGui\Events\UserDeletedEvent' => [
     'App\Listeners\UserDeletedListener',
   ],
-  'Acoustep\EntrustGui\Events\RoleCreatedEvent' => [
+  'Jmkim\EntrustGui\Events\RoleCreatedEvent' => [
     'App\Listeners\RoleCreatedListener',
   ],
-  'Acoustep\EntrustGui\Events\RoleUpdatedEvent' => [
+  'Jmkim\EntrustGui\Events\RoleUpdatedEvent' => [
     'App\Listeners\RoleUpdatedListener',
   ],
-  'Acoustep\EntrustGui\Events\RoleDeletedEvent' => [
+  'Jmkim\EntrustGui\Events\RoleDeletedEvent' => [
     'App\Listeners\RoleDeletedListener',
   ],
-  'Acoustep\EntrustGui\Events\PermissionCreatedEvent' => [
+  'Jmkim\EntrustGui\Events\PermissionCreatedEvent' => [
     'App\Listeners\PermissionCreatedListener',
   ],
-  'Acoustep\EntrustGui\Events\PermissionUpdatedEvent' => [
+  'Jmkim\EntrustGui\Events\PermissionUpdatedEvent' => [
     'App\Listeners\PermissionUpdatedListener',
   ],
-  'Acoustep\EntrustGui\Events\PermissionDeletedEvent' => [
+  'Jmkim\EntrustGui\Events\PermissionDeletedEvent' => [
     'App\Listeners\PermissionDeletedListener',
   ]
 ];
@@ -341,7 +354,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Shanmuga\LaravelEntrust\Traits\LaravelEntrustUserTrait;
-use Acoustep\EntrustGui\Contracts\HashMethodInterface;
+use Jmkim\EntrustGui\Contracts\HashMethodInterface;
 use Hash;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract, ValidatingModelInterface, HashMethodInterface, PurgingModelInterface
@@ -442,7 +455,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Shanmuga\LaravelEntrust\Traits\LaravelEntrustUserTrait;
-use Acoustep\EntrustGui\Contracts\HashMethodInterface;
+use Jmkim\EntrustGui\Contracts\HashMethodInterface;
 use Hash;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract, ValidatingModelInterface, HashMethodInterface
@@ -585,10 +598,10 @@ Add the following to the ```config/entrust-gui.php``` configuration file to enab
      ],
 ```
 
-Optional removal of ```Esensi\Model\Traits\HashingModelTrait```. Replaced with ```Acoustep\EntrustGui\Contracts\HashMethodInterface``` and allows users to set their own password hashing method for within the Entrust GUI. For the default Laravel 5.2 Auth it's recommended to use the following snippet in your User model.
+Optional removal of ```Esensi\Model\Traits\HashingModelTrait```. Replaced with ```Jmkim\EntrustGui\Contracts\HashMethodInterface``` and allows users to set their own password hashing method for within the Entrust GUI. For the default Laravel 5.2 Auth it's recommended to use the following snippet in your User model.
 
 ```
-use Acoustep\EntrustGui\Contracts\HashMethodInterface;
+use Jmkim\EntrustGui\Contracts\HashMethodInterface;
 use Hash;
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract, ValidatingModelInterface, HashMethodInterface
     // ...
@@ -627,7 +640,7 @@ If you intend to use the confirmable option and have already published the views
 
 ## Support Entrust GUI
 
-Entrust GUI is maintained entirely in my own time. If you'd like to help, please feel free to open an issue with feature requests or proposals. If you'd like to buy me a coffee to say thanks, check out my [ko-fi page](https://ko-fi.com/P5P311GU6).
+If you'd like to help, please feel free to open an issue with feature requests or proposals.
 
 ## To do
 
